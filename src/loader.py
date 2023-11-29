@@ -95,3 +95,19 @@ import seaborn as sns
 
 from nltk.corpus import stopwords
 from wordcloud import WordCloud
+
+
+def get_top_20_user(data, channel='Random'):
+    """get user with the highest number of message sent to any channel"""
+
+    data['sender_name'].value_counts()[:20].plot.bar(figsize=(15, 7.5))
+    plt.title(f'Top 20 Message Senders in #{channel} channels', size=15, fontweight='bold')
+    plt.xlabel("Sender Name", size=18); plt.ylabel("Frequency", size=14);
+    plt.xticks(size=12); plt.yticks(size=12);
+    plt.show()
+
+    data['sender_name'].value_counts()[-10:].plot.bar(figsize=(15, 7.5))
+    plt.title(f'Bottom 10 Message Senders in #{channel} channels', size=15, fontweight='bold')
+    plt.xlabel("Sender Name", size=18); plt.ylabel("Frequency", size=14);
+    plt.xticks(size=12); plt.yticks(size=12);
+    plt.show()
