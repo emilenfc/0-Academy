@@ -82,3 +82,16 @@ if __name__ == "__main__":
     
     parser.add_argument('--zip', help="Name of a zip file to import")
     args = parser.parse_args()
+    import os, sys
+import re
+import json
+import glob
+import datetime
+from collections import Counter
+
+import pandas as pd
+from matplotlib import pyplot as plt
+import seaborn as sns
+
+from nltk.corpus import stopwords
+from wordcloud import WordCloud
